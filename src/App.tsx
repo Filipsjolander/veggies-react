@@ -1,23 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import styled from "styled-components";
+
+const Heading = styled.h1``;
+
+const SignUpButton = styled.button`
+  border: solid 1px white;
+  border-radius: 8px;
+  padding: 8px;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  &:hover {
+    background-color: #ffffff11;
+  }
+`;
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Heading>Veggies</Heading>
+        <p>The website will launch soon...</p>
+        <SignUpButton
+          onClick={() => {
+            alert("not implemented");
+          }}
         >
-          Learn React
-        </a>
+          Sign up here
+        </SignUpButton>
       </header>
     </div>
   );
