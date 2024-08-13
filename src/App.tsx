@@ -20,8 +20,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Heading>Veggies</Heading>
-        <p>The website will launch soon...</p>
+        <Heading>nomio</Heading>
+        <p>the website will launch soon...</p>
         <SignUpButton
           onClick={() => {
             alert("not implemented");
