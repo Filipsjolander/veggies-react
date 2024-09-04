@@ -93,7 +93,7 @@ function App() {
   const [hasSent, setHasSent] = useState(false);
   const addEmail = async (email: string) => {
     try {
-      const docRef = await addDoc(collection(db, "emails"), {
+      await addDoc(collection(db, "emails"), {
         email: email,
         addedAt: Timestamp.now(),
       });
@@ -110,9 +110,12 @@ function App() {
           <Heading>Nomio</Heading>
           <p>We are coming soon.</p>
           <p>
-            Get real with clinically tested isothiocyanates from 🥦. Reducing
-            lactic acid by 12% and increases by endurance 8% on average.
-            Promotes quicker recovery for your volume training.
+            Get real with clinically tested isothiocyanates from{" "}
+            <span role="img" aria-label="Broccoli">
+              🥦
+            </span>
+            . Reducing lactic acid by 12% and increases by endurance 8% on
+            average. Promotes quicker recovery for your volume training.
           </p>
           <p>and it works</p>
           <InputContainer>
