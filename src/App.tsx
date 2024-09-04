@@ -110,9 +110,9 @@ function App() {
           <Heading>Nomio</Heading>
           <p>We are coming soon.</p>
           <p>
-            Get real with clinically tested isothiocyanates from 🥦 <br />
-            Reducing lactic acid by 12% and increases by endurance 8% on
-            average. Promotes quicker recovery for your volume training.
+            Get real with clinically tested isothiocyanates from 🥦. Reducing
+            lactic acid by 12% and increases by endurance 8% on average.
+            Promotes quicker recovery for your volume training.
           </p>
           <p>and it works</p>
           <InputContainer>
