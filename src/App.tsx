@@ -117,7 +117,7 @@ function App() {
             . Reducing lactic acid by 12% and increases by endurance 8% on
             average. Promotes quicker recovery for your volume training.
           </p>
-          <p>and it works</p>
+          <p>And it works.</p>
           <InputContainer>
             <StyledInput
               value={email}
