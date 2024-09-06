@@ -7,7 +7,11 @@ import { db } from "./firestoreConfig";
 import image from "./nomio-runner.png";
 
 const Heading = styled.h1`
-  font-size: 5em;
+  font-size: 3em;
+  margin-bottom: 0;
+
+  /* @media (max-width: 600px) {
+  } */
 `;
 
 const Fade = styled.div`
@@ -59,6 +63,7 @@ const SignUpButton = styled.button`
   border-bottom-right-radius: 8px;
   border: transparent;
   padding: 8px;
+  padding-right: 12px;
   color: #ffffffc9;
   background-color: transparent;
   cursor: pointer;
@@ -87,6 +92,46 @@ const InputContainer = styled.div`
   flex-direction: row;
 `;
 
+const ScrollContainer = styled.div`
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+`;
+
+const Content = styled.div`
+  margin: 180px;
+  max-width: 50ch;
+  @media (max-width: 600px) {
+    margin: 54px;
+    margin-top: 96px;
+    margin-left: 32px;
+  }
+`;
+
+const Link = styled.a`
+  color: white;
+  text-underline-offset: 8px;
+`;
+
+const LinkContainer = styled.p`
+  transition: 0.2s;
+  background-color: rgba(255, 255, 255, 0);
+  width: fit-content;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  padding-bottom: 4px;
+`;
+
+const Logo = styled.div`
+  z-index: 1;
+  position: absolute;
+  left: 18px;
+  top: 8px;
+  color: rgb(250, 250, 250);
+`;
+
 function App() {
   console.log("hello", { db });
   const [email, setEmail] = useState("");
@@ -106,39 +151,49 @@ function App() {
   return (
     <div className="App">
       <Page>
-        <div style={{ zIndex: 1, margin: "120px", maxWidth: "50ch" }}>
-          <Heading>Nomio</Heading>
-          <p>We are coming soon.</p>
-          <p>
-            Get real with clinically tested isothiocyanates from{" "}
-            <span role="img" aria-label="Broccoli">
-              🥦
-            </span>
-            . Reducing lactic acid by 12% and increases by endurance 8% on
-            average. Promotes quicker recovery for your volume training.
-          </p>
-          <p>And it works.</p>
-          <InputContainer>
-            <StyledInput
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder={hasSent ? "Thank you!" : "Your email"}
-            />
-            <SignUpButton
-              onClick={async () => {
-                await addEmail(email);
-                console.log("trying to read");
-                const querySnapshot = await getDocs(collection(db, "emails"));
-                querySnapshot.forEach((doc) => {
-                  console.log(`${doc.id} => ${doc.data()}`);
-                });
-              }}
-            >
-              Sign up for early access to no6 stamina
-            </SignUpButton>
-          </InputContainer>
-          <p>Dig into the science here.</p>
-        </div>
+        <Logo>
+          <h3>nomio</h3>
+        </Logo>
+        <ScrollContainer>
+          <Content>
+            <Heading>Launching soon</Heading>
+
+            <p>
+              Get scientific with clinically tested isothiocyanates from{" "}
+              <span role="img" aria-label="Broccoli">
+                🥦
+              </span>
+              . Reduces lactic acid by 12% and increases endurance by 8% on
+              average during exercise. Promotes quicker recovery of muscles
+              post-exercise, for your volume training.
+            </p>
+            <p>And it works.</p>
+            <InputContainer>
+              <StyledInput
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={hasSent ? "Thank you!" : "Your email"}
+              />
+              <SignUpButton
+                onClick={async () => {
+                  await addEmail(email);
+                  console.log("trying to read");
+                  const querySnapshot = await getDocs(collection(db, "emails"));
+                  querySnapshot.forEach((doc) => {
+                    console.log(`${doc.id} => ${doc.data()}`);
+                  });
+                }}
+              >
+                Sign up for early access
+              </SignUpButton>
+            </InputContainer>
+            <LinkContainer>
+              <Link href={"https://pubmed.ncbi.nlm.nih.gov/37688976/"}>
+                Dig into the science here.
+              </Link>
+            </LinkContainer>
+          </Content>
+        </ScrollContainer>
         <BackgroundContainer>
           <Image src={image} />
           <ColoredBackground>
