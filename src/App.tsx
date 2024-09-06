@@ -52,7 +52,7 @@ const Image = styled.img`
 
 const Page = styled.div`
   position: relative;
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
   display: flex;
   flex-direction: column;
