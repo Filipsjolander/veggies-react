@@ -7,11 +7,14 @@ import { db } from "./firestoreConfig";
 import image from "./nomio-runner.png";
 
 const Heading = styled.h1`
-  font-size: 3em;
-  margin-bottom: 0;
+  font-size: 5em;
+  line-height: 0.9em;
+  margin-bottom: 2rem;
 
-  /* @media (max-width: 600px) {
-  } */
+  @media (max-width: 600px) {
+    font-size: 2em;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const Fade = styled.div`
@@ -156,7 +159,7 @@ function App() {
         </Logo>
         <ScrollContainer>
           <Content>
-            <Heading>Launching soon</Heading>
+            <Heading>Launching soon.</Heading>
 
             <p>
               Get scientific with clinically tested isothiocyanates from{" "}
