@@ -107,7 +107,7 @@ const Content = styled.div`
   max-width: 50ch;
   @media (max-width: 600px) {
     margin: 54px;
-    margin-top: 96px;
+    margin-top: 120px;
     margin-left: 32px;
   }
 `;
