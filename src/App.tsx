@@ -136,7 +136,6 @@ const Logo = styled.div`
 `;
 
 function App() {
-  console.log("hello", { db });
   const [email, setEmail] = useState("");
   const [hasSent, setHasSent] = useState(false);
   const addEmail = async (email: string) => {
@@ -177,7 +176,6 @@ function App() {
               <SignUpButton
                 onClick={async () => {
                   await addEmail(email);
-                  console.log("trying to read");
                   const querySnapshot = await getDocs(collection(db, "emails"));
                   querySnapshot.forEach((doc) => {
                     console.log(`${doc.id} => ${doc.data()}`);
