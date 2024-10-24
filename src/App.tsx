@@ -161,10 +161,10 @@ function App() {
             <Heading>Launching soon.</Heading>
 
             <p>
-              Improving athletic performance based on clinical science on
-              broccoli sprouts from researchers at GIH and KI. Results include
-              an average reduction of lactate during intense exercise by 12%,
-              and improved recovery.
+              Improving athletic performance with broccoli sprouts - based on
+              research studies from GIH and KI. Results include an average
+              reduction of lactate during intense exercise by 12%, and improved
+              recovery.
             </p>
             <p>Stay updated by signing up:</p>
             <InputContainer>
